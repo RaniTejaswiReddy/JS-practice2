@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BS1</title>
+</head>
+<body>
+    <script>
+          function binarySearch (list, value)
+        {
+            var first = 0
+            var last = list.length - 1
+            console.log(last);
+            var middle = Math.floor((first + last) / 2)
+            console.log(middle);
+            while (list[middle] !== value && first < last)
+            {
+              if (value < list[middle]) 
+              {
+               last = middle - 1
+              } else 
+              {
+                first = middle + 1
+              }
+              middle = Math.floor((first + last) / 2)
+            }
+            return (list[middle] !== value) ? -1 : middle
+        }
+
+        const list = [4, 5, 6, 14, 20, 21, 23, 25, 28]
+        console.log(binarySearch(list, 4))
+    </script>
+</body>
+</html>
